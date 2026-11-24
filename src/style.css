@@ -1,0 +1,237 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* === Header === */
+header {
+  text-align: center;
+  padding: 1.5rem 0 1rem;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  color: #16213e;
+}
+
+.app-info {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+/* === Form === */
+#task-form {
+  display: grid;
+  gap: 0.6rem;
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+#task-form input {
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+#task-form input:focus {
+  outline: none;
+  border-color: #0f3460;
+}
+
+#task-form button {
+  padding: 0.75rem;
+  background: #0f3460;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#task-form button:hover {
+  background: #16213e;
+}
+
+/* === Task List === */
+#task-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.empty-state {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+/* === Task Card === */
+.task-card {
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid #e94560;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.task-card.done {
+  border-left-color: #2ecc71;
+  opacity: 0.75;
+}
+
+.task-card.done .task-judul {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Task Header */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.task-judul {
+  font-size: 1.05rem;
+  color: #16213e;
+  flex: 1;
+}
+
+/* Status Badge */
+.task-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.status-belum {
+  background: #ffeaa7;
+  color: #d35400;
+}
+
+.status-selesai {
+  background: #d5f5e3;
+  color: #27ae60;
+}
+
+.task-status:hover {
+  filter: brightness(0.9);
+}
+
+/* Task Details */
+.task-matkul {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.task-deadline {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.6rem;
+}
+
+.task-deadline.overdue {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Task Actions */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-actions button {
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-edit:hover {
+  border-color: #3498db;
+  background: #ebf5fb;
+}
+
+.btn-delete:hover {
+  border-color: #e74c3c;
+  background: #fdedec;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* === Responsive: Tablet & Desktop === */
+@media (min-width: 480px) {
+  #app {
+    padding: 2rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #task-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  #task-form input:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  #task-form button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 768px) {
+  #app {
+    padding: 2.5rem;
+  }
+}
