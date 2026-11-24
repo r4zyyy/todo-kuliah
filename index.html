@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Tugas Kuliah</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>📚 Daftar Tugas Kuliah</h1>
+        <p class="app-info" id="app-info"></p>
+      </header>
+
+      <main>
+        <form id="task-form">
+          <input type="text" id="input-judul" placeholder="Judul tugas" required />
+          <input type="text" id="input-matkul" placeholder="Mata kuliah" required />
+          <input type="date" id="input-deadline" required />
+          <button type="submit" id="btn-submit">Tambah Tugas</button>
+        </form>
+
+        <div id="task-list"></div>
+      </main>
+
+      <footer>
+        <p id="footer-info"></p>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
